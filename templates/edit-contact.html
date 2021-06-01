@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD CONTACT</title>
+</head>
+<body>
+
+<form action="/update/{{contact.3}}" method="POST">
+    <h2>Welcome</h2>
+    <input type="text" maxlength="50" name="fullname" placeholder="fullname" value="{{ contact.0 }}" required>
+    <input type="email" name="email" placeholder="email"  value="{{ contact.1 }}" required>
+    <input type="text" name="phone" placeholder="phone" value="{{ contact.2 }}" required>
+    <button type="submit">Update</button>
+</form>
+
+ <a href="/">Back Home</a>
+
+</body>
+</html>
