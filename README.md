@@ -1,4 +1,8 @@
+********************************************************
+
 # Flask Page Crud Contacts
+
+### This is a simple crud app contact in flask framework
 
 ## Requirementes
 
@@ -9,4 +13,14 @@
 * Mysql
 
 * Html and Css
+
+* Bootstrap
+
+**********************************************************
+
+## Screenshots
+
+![Capture1](img/img1.png)
+![Capture1](img/img2.png)
+![Capture1](img/img3.png)
 
