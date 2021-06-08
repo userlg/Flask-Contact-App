@@ -24,6 +24,10 @@ def index():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM contacts')
     data = cur.fetchall()
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT count(id) FROM contacts')
+    record = cur.fetchone()
+    print(record[0])
     cur.close()
     return render_template('index.html', contacts=data)
 
