@@ -1,23 +1,48 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CRUD CONTACT</title>
-</head>
-<body>
+{% extends 'layout.html'%} {% block body %}
 
-<form action="/update/{{contact.3}}" method="POST">
-    <h2>Welcome</h2>
-    <input type="text" maxlength="50" name="fullname" placeholder="fullname" value="{{ contact.0 }}" required>
-    <input type="email" name="email" placeholder="email"  value="{{ contact.1 }}" required>
-    <input type="text" name="phone" placeholder="phone" value="{{ contact.2 }}" required>
-    <button type="submit">Update</button>
-</form>
+<div class="row">
+<div class="col-md-6 mx-auto">
+<div class="card card-body mt-4 rounded rounded-2">
+  <form action="/update/{{contact.3}}" method="POST">
+    <h2 class="mt-2 mb-3 ms-4">Edit contact</h2>
+    <div class="form-group input-group mb-4 ">
+    <input
+      type="text"
+      maxlength="50"
+      name="fullname"
+      placeholder="fullname"
+      value="{{ contact.0 }}"
+      required
+      class="form-control input-group-text  rounded rounded-3 shadow-sm"
+    />
+    </div>
+    <div class="form-group input-group mb-4">
+    <input
+      type="email"
+      name="email"
+      placeholder="email"
+      value="{{ contact.1 }}"
+      required
+      class="form-control input-group-text rounded rounded-3 shadow-sm"
+    />
+    </div>
+    <div class="form-group input-group mb-4">
+    <input
+      type="text"
+      name="phone"
+      placeholder="phone"
+      value="{{ contact.2 }}"
+      required
+      class="form-control input-group-text rounded rounded-3 shadow-sm"
+    />
+    </div>
+    <div class="form-group mb-4">
+    <button class="rounded rounded-3 btn btn-info m-auto form-control shadow" type="submit">Update</button>
+    </div>
+  </form>
+  <button class="mt-1 mb-2 btn  btn-primary rounded rounded-4 shadow"><a href="/" class="text-white text-decoration-none">Back</a></button>
+</div>
+</div>
+</div>
 
- <a href="/">Back Home</a>
-
-</body>
-</html>
+{% endblock %}

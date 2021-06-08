@@ -1,3 +1,4 @@
+from os import environ
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
 
@@ -26,7 +27,7 @@ def index():
     return render_template('index.html', contacts=data)
 
 
-@app.route('/add_contact', methods=['POST'])
+@app.route('/add_contact', methods=['POST','GET'])
 def add_contact():
     if request.method == 'POST':
         fullname = request.form['fullname']
@@ -44,7 +45,7 @@ def add_contact():
 @app.route('/delete/<string:id>')
 def delete_contact(id):
     cur = mysql.connection.cursor()
-    cur.execute('DELETE  FROM contacts WHERE id= (%s)', id)
+    cur.execute('DELETE  FROM contacts WHERE id= {0}'.format(id))
     mysql.connection.commit()
     cur.close()
     flash('Contact deleted succesfully')
@@ -60,7 +61,7 @@ def get_contact(id):
     return render_template('edit-contact.html', contact=data[0])
 
 
-@app.route('/update/<string:id>', methods=['POST'])
+@app.route('/update/<string:id>', methods=[ 'GET','POST'])
 def update(id):
     if request.method == 'POST':
         fullname = request.form['fullname']
@@ -76,4 +77,4 @@ def update(id):
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5500, )
+    app.run(host='127.0.0.1', port=5500)
