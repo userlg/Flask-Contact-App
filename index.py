@@ -4,7 +4,7 @@ from flask_mysqldb import MySQL
 
 # Flask Init
 app = Flask(__name__)
-app.env = 'development'  # development-production
+
 
 # Mysql Connection
 app.config['MYSQL_HOST'] = '127.0.0.1'
@@ -16,6 +16,7 @@ mysql = MySQL(app)
 # settings
 app.secret_key = 'greenkey'
 app.debug = True  # True-False
+app.env = 'development'  # development-production
 
 
 @app.route('/')
