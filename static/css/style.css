@@ -16,6 +16,7 @@ body {
 .action2 {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
 
 }
 
@@ -26,7 +27,7 @@ body {
   #formulario {
     margin-left: auto;
     margin-right: auto;
-    width: 230px;
+    width: 260px;
   }
   #table {
     margin-left: auto;
@@ -42,12 +43,18 @@ body {
   #formulario {
     margin-left: auto;
     margin-right: auto;
-    width: 900px;
+    width: 340px;
   }
-  #table {
-    
+   table {
     margin-left: auto;
     margin-right: auto;
+    width: 200px;
+  }
+
+  #table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
   .action1, .action2 {
     display: none;
@@ -55,9 +62,28 @@ body {
 }
 }
 
+@media screen and (max-width:1000px) and (min-width:770px) {
+ 
+  #table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+  }
 
+  table {
+    width: 95%;
+  }
+ 
+  #formulario {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+ 
+}
 
-@media screen and (max-width:1000px) {
+@media screen and (min-width:1000px) {
   #formulario {
     margin-left: auto;
     margin-right: auto;

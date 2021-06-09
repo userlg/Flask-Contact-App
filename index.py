@@ -1,6 +1,9 @@
-from os import environ
+from flask import Blueprint
+from flask_paginate import Pagination, get_page_parameter
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mysqldb import MySQL
+from models import *
+from flask_sqlalchemy import SQLAlchemy
 
 # Flask Init
 app = Flask(__name__)
@@ -21,6 +24,7 @@ app.env = 'development'  # development-production
 
 @app.route('/')
 def index():
+    
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM contacts')
     data = cur.fetchall()
@@ -28,8 +32,10 @@ def index():
     cur.execute('SELECT count(id) FROM contacts')
     record = cur.fetchone()
     print(record[0])
+    contacts = data
+
     cur.close()
-    return render_template('index.html', contacts=data)
+    return render_template('index.html', contacts=contacts)
 
 
 @app.route('/add_contact', methods=['POST','GET'])

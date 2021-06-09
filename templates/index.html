@@ -14,7 +14,7 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
 {% endfor %} {% endif %} {% endwith %}
 
 <div class="row principal">
-  <div class="col-xs-8 col-sm-6 col-6 col-md-6 col-lg-3" id="formulario">
+  <div class=" col-sm-4 col-6 col-md-6 col-lg-3" id="formulario">
     <div
       class="
         card card-body
@@ -25,7 +25,7 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
       "
     >
       <form action="/add_contact" method="POST">
-        <h2 class="mb-4 mt-2">Welcome</h2>
+        <h2 class="mb-4 mt-2 text-center">Welcome</h2>
         <div class="form-group mb-4 shadow-sm input-group">
           <input
             type="text"
@@ -91,9 +91,9 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
       <tbody>
         {% for contact in contacts %}
         <tr>
-          <td>{{ contact.0 }}</td>
-          <td>{{ contact.1 }}</td>
-          <td class="phone2">{{ contact.2 }}</td>
+          <td class="text-center">{{ contact.0 }}</td>
+          <td class="text-center">{{ contact.1 }}</td>
+          <td class="phone2 text-center">{{ contact.2 }}</td>
           <td class="action2">
             <a href="/edit/{{contact.3}}" class="btn btn-info rounded rounded-3">Edit</a>
             <a href="/delete/{{contact.3}}" id="delete" class="btn btn-danger ms-1 rounded rounded-3"
