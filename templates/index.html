@@ -14,14 +14,14 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
 {% endfor %} {% endif %} {% endwith %}
 
 <div class="row principal">
-  <div class=" col-sm-4 col-6 col-md-6 col-lg-3" id="formulario">
+  <div class=" col-sm-4 col-6 col-md-6 col-lg-3" id="formulario ">
     <div
       class="
         card card-body
         rounded-2
         mt-4
         border border-2 border-info
-        shadow-sm
+        shadow-sm animate__animated animate__backInLeft
       "
     >
       <form action="/add_contact" method="POST">
@@ -77,7 +77,7 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
         rounded-3
         mt-4
         border border-2 border-info
-        shadow-sm
+        shadow-sm  animate__animated animate__backInRight animate__delay-1s
       "
     >
       <thead>
