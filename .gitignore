@@ -60,3 +60,5 @@ instance/
 
 # Optional: ignore database files
 *.db
+
+Pipfile.lock
