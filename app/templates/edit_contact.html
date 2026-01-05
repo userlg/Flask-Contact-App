@@ -8,40 +8,44 @@ body %}
         <h5 class="card-title text-center mb-4">Edit Contact</h5>
 
         <form
-          action="{{ url_for('contacts.update_contact', id=contact.id) }}"
+          action="{{ url_for('contacts.edit_contact', id=contact.id) }}"
           method="POST"
         >
+          {{ form.hidden_tag() }}
           <div class="mb-3">
-            <label class="form-label">Full name</label>
-            <input
-              type="text"
-              name="fullname"
-              class="form-control"
-              value="{{ contact.fullname }}"
-              required
-            />
+            {{ form.fullname.label(class="form-label") }}
+            {{ form.fullname() }}
+            {% if form.fullname.errors %}
+              <div class="text-danger small">
+                {% for error in form.fullname.errors %}
+                  <div>{{ error }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              value="{{ contact.email }}"
-              required
-            />
+            {{ form.email.label(class="form-label") }}
+            {{ form.email() }}
+            {% if form.email.errors %}
+              <div class="text-danger small">
+                {% for error in form.email.errors %}
+                  <div>{{ error }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
 
           <div class="mb-4">
-            <label class="form-label">Phone</label>
-            <input
-              type="text"
-              name="phone"
-              class="form-control"
-              value="{{ contact.phone }}"
-              required
-            />
+            {{ form.phone.label(class="form-label") }}
+            {{ form.phone() }}
+            {% if form.phone.errors %}
+              <div class="text-danger small">
+                {% for error in form.phone.errors %}
+                  <div>{{ error }}</div>
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
 
           <button type="submit" class="btn btn-info w-100">Update</button>

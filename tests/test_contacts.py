@@ -30,8 +30,10 @@ def test_edit_contact(client, init_database) -> None:
     """Test editar un contacto existente"""
     # Obtenemos el ID del contacto agregado por init_database
     from app.models.contact import Contact
+    from app.extensions import db
 
-    contact = Contact.query.first()
+    # Usar la nueva sintaxis de SQLAlchemy 2.0
+    contact = db.session.execute(db.select(Contact)).scalars().first()
 
     response = client.post(
         f"/edit/{contact.id}",
@@ -88,20 +90,15 @@ def test_edit_contact_post_not_found(client) -> None:
     assert response.status_code == 404
 
 
-def test_update_contact_not_found(client)-> None:
-    non_existing_id = 9999
-
-    response = client.post(
-        f"/update/{non_existing_id}",
-        data={"fullname": "No Name", "email": "noemail@test.com", "phone": "000000"},
-    )
-
-    assert response.status_code == 404
+# Test eliminado: la ruta /update/{id} ya no existe (fue consolidada en /edit/{id})
 
 
 def test_delete_contact_not_found(client) -> None:
+    """Test que eliminar un contacto inexistente redirige con mensaje de error"""
     non_existing_id = 9999
 
-    response = client.get(f"/delete/{non_existing_id}")
+    response = client.get(f"/delete/{non_existing_id}", follow_redirects=True)
 
-    assert response.status_code == 404
+    # Ahora el servicio lanza ValueError y se muestra un mensaje flash, luego redirige
+    assert response.status_code == 200
+    assert b"Contacto no encontrado" in response.data
