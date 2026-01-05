@@ -88,7 +88,7 @@ def test_edit_contact_post_not_found(client) -> None:
     assert response.status_code == 404
 
 
-def test_update_contact_not_found(client):
+def test_update_contact_not_found(client)-> None:
     non_existing_id = 9999
 
     response = client.post(
@@ -99,7 +99,7 @@ def test_update_contact_not_found(client):
     assert response.status_code == 404
 
 
-def test_delete_contact_not_found(client):
+def test_delete_contact_not_found(client) -> None:
     non_existing_id = 9999
 
     response = client.get(f"/delete/{non_existing_id}")
