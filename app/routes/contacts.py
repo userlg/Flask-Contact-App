@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
+from flask import Blueprint, abort, flash, redirect, render_template, request, url_for
+
 from app.extensions import db
 from app.models.contact import Contact
 

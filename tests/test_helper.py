@@ -1,8 +1,8 @@
 import pytest
 from werkzeug.exceptions import NotFound
+
 from app.models.contact import Contact
 from app.routes.contacts import get_contact_or_404
-from app.extensions import db
 
 
 def test_get_contact_or_404_exists(client, init_database) -> None:

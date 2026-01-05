@@ -1,6 +1,6 @@
 /* ==================== General Styles ==================== */
 body {
-  background: url("blue.png") no-repeat center center;
+  background: url("background.png") no-repeat center center;
   background-size: cover;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin: 0;
