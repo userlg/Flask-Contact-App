@@ -1,74 +1,75 @@
 # 📇 Flask CRUD Contacts App
 
-Aplicación web **CRUD (Create, Read, Update, Delete)** para la gestión de contactos, desarrollada con **Flask** y **SQLite3**.  
-Este proyecto forma parte de mi **portafolio profesional** y demuestra buenas prácticas de desarrollo backend con Python, incluyendo **linting y calidad de código con Ruff**.
+**CRUD (Create, Read, Update, Delete) web application** for managing contacts, built with **Flask** and **SQLite3**.  
+This project is part of my **professional portfolio** and demonstrates best practices in Python backend development, including **linting and code quality with Ruff**.
 
 ---
 
-## 🎯 Objetivo del proyecto
+## 🎯 Project Goal
 
-- Construir una aplicación web completa usando **Flask**
-- Implementar operaciones CRUD usando **SQLite3**
-- Aplicar buenas prácticas de organización y legibilidad del código
-- Mantener calidad de código con herramientas modernas del ecosistema Python
-
----
-
-## 🚀 Funcionalidades
-
-- 📌 Crear contactos
-- 📋 Listar contactos
-- ✏️ Editar contactos
-- 🗑️ Eliminar contactos
-- 🎨 Interfaz responsiva con Bootstrap
-- 🧪 Tests básicos
-- 🧹 Código validado con **Ruff**
+- Build a full-featured web application using **Flask**  
+- Implement CRUD operations with **SQLite3**  
+- Apply best practices for code organization and readability  
+- Maintain code quality using modern Python tools  
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🚀 Features
 
-- **Python** 3.9.5
-- **Flask**
-- **SQLite3**
-- **HTML5**
-- **CSS3**
-- **Bootstrap**
-- **Ruff** (linting y calidad de código)
-
----
-
-## 📦 Requisitos
-
-Antes de ejecutar la aplicación:
-
-- Python 3.9.5 o superior
-- Pip
-
-> 💡 SQLite3 viene incluido por defecto con Python, no requiere instalación adicional.
+- 📌 Create contacts  
+- 📋 List contacts  
+- ✏️ Edit contacts  
+- 🗑️ Delete contacts  
+- 🎨 Responsive interface with **Bootstrap**  
+- 🧪 Basic tests  
+- 🧹 Code validated with **Ruff**  
 
 ---
 
-## ⚙️ Instalación y ejecución
+## 🛠️ Technologies Used
 
-1. Clonar el repositorio:
+- **Python** 3.9.5  
+- **Flask**  
+- **SQLite3**  
+- **HTML5**  
+- **CSS3**  
+- **Bootstrap**  
+- **Ruff** (linting and code quality)  
+
+---
+
+## 📦 Requirements
+
+Before running the application:
+
+- Python 3.9.5 or higher  
+- Pip  
+
+> 💡 SQLite3 comes included with Python by default, so no additional installation is required.  
+
+---
+
+## ⚙️ Installation and Running
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/userlg/Flask-Contact-App
 
    cd Flask-Contact-App
-
+    
+    # Activate the virtual enviorment
    .venv/Script/activate
 
+   # Install all dependencies
    pip install -r requirements.txt
 
    python run.py
 
-   #Abre en tu navegador
-
+   # Open the web browser
    http://localhost:5000
    ```
 
-## Uso de Ruff
+## Ruff
    ```bash
    ruff check --fix
 ```
