@@ -27,8 +27,8 @@
     <!-- Favicon -->
     <link
       rel="icon"
-      type="image/png"
-      href="{{ url_for('static', filename='css/chilli.png') }}"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='assets/favicon.svg') }}"
     />
   </head>
 
@@ -36,8 +36,19 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="{{ url_for('contacts.index') }}">
-          🌶️ ContactApp
+        <a
+          class="navbar-brand fw-bold d-flex align-items-center"
+          href="{{ url_for('contacts.index') }}"
+        >
+          <!-- SVG logo -->
+          <img
+            src="{{ url_for('static', filename='assets/favicon.svg') }}"
+            alt="ContactApp Logo"
+            width="30"
+            height="30"
+            class="me-2"
+          />
+          ContactApp
         </a>
       </div>
     </nav>
