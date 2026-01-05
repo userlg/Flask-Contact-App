@@ -1,0 +1,103 @@
+{% extends "layout.html" %} {% block title %} Contact Home {% endblock %} {% block
+body %}
+
+<div class="row g-4">
+  <!-- Formulario -->
+  <div class="col-lg-3 col-md-4">
+    <div class="card shadow-sm animate__animated animate__fadeInLeft">
+      <div class="card-body">
+        <h5 class="card-title text-center mb-4">Add Contact</h5>
+
+        <form action="{{ url_for('contacts.add_contact') }}" method="POST">
+          <div class="mb-3">
+            <input
+              type="text"
+              name="fullname"
+              class="form-control"
+              placeholder="Full name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="tel"
+              name="phone"
+              class="form-control"
+              placeholder="Phone"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-info w-100">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla o mensaje si no hay contactos -->
+  <div class="col-lg-9 col-md-8">
+    {% if contacts %}
+    <div class="card shadow-sm animate__animated animate__fadeInRight">
+      <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+          <thead class="table-dark text-center">
+            <tr>
+              <th>Fullname</th>
+              <th>Email</th>
+              <th class="d-none d-md-table-cell">Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for contact in contacts %}
+            <tr class="text-center align-middle">
+              <td>{{ contact.fullname }}</td>
+              <td>{{ contact.email }}</td>
+              <td class="d-none d-md-table-cell">{{ contact.phone }}</td>
+              <td>
+                <a
+                  href="{{ url_for('contacts.edit_contact', id=contact.id) }}"
+                  class="btn btn-sm btn-outline-info"
+                  >Edit</a
+                >
+                <a
+                  href="{{ url_for('contacts.delete_contact', id=contact.id) }}"
+                  class="btn btn-sm btn-outline-danger ms-1"
+                  onclick="return confirm('Delete this contact?')"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% else %}
+    <div
+      class="card shadow-sm text-center py-5 animate__animated animate__fadeIn"
+    >
+      <div class="card-body">
+        <h5 class="text-muted">📭 No contacts yet!</h5>
+        <p class="text-muted">
+          Use the form on the left to add your first contact.
+        </p>
+        <a href="#add-form" class="btn btn-info mt-3">Add Contact</a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

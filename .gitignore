@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.sqlite3
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables
+.env
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python testing / coverage
+.coverage
+htmlcov/
+*.cover
+*.py,cover
+.coverage.*
+nosetests.xml
+pytest_cache/
+.pytest_cache/
+.cache/
+*.egg-info/
+dist/
+build/
+
+# Flask instance folder
+instance/
+
+# Logs
+*.log
+
+# Ignore static build files if you rebuild them
+/static/css/blue.png
+/static/css/bootstrap.css
+/static/css/chilli.png
+/static/css/style.css
+/static/js/bootstrap.js
+/static/js/main.js
+
+# Ignore old templates you deleted
+/templates/edit-contact.html
+/templates/index.html
+/templates/layout.html
+
+# Ignore runtime files
+*.pid
+*.sock
+
+# Optional: ignore database files
+*.db
